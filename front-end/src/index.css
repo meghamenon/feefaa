@@ -1,7 +1,9 @@
 
 body {
   background-color: #e6ecf0;
-  padding-top: 54px;
+  /* background-image: url(“background.jpg”); */
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
