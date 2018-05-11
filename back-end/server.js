@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const modelsIndex = require('./models/modelsIndex');
+const modelsIndex = require('./models');
 const bodyParser = require('body-parser');
 const banterRouter = require('./config/routes');
 
