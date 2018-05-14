@@ -15,8 +15,13 @@ app.use(bodyParser.json())
 
 app.use(banterRouter);
 
-app.get('/', function (req, res) {
-  res.send('Hello world')
+app.get('/banters', function (req, res) {
+  console.log('received a GET request!');
+    console.log('request body is', req.body);
+    Banter.find({}, function (err, banterPosts) {
+	    if (err) res.send(err);
+	    else res.json(banterPosts);
+    });
 })
 
 let port = process.env.PORT || 8080;
