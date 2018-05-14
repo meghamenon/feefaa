@@ -12,7 +12,7 @@ class BantersContainer extends Component {
 	  }
 
 	handleContentChange = (event) => {
-		console.log(event.target.value)
+		console.log('YOU JUST TYPED', event.target.value)
 		this.setState({
 			content: event.target.value
 		})
@@ -32,15 +32,23 @@ class BantersContainer extends Component {
 				content: this.state.content,
 				author: 'faisal vs messi'
 			})
-		}).then(data => console.log(data))
+		})
+		.then(res => res.json())
+		.then(newPost => {
+			this.setState({
+				banterPosts: this.state.banterPosts.concat(newPost),
+				// banterPosts: [...this.state.banterPosts, newPost]
+				content: ''
+			})
+		})
 	}
 
 
 	componentDidMount() {
   	fetch('http://localhost:8080/api/banters')
   		.then(res => res.json())
-  		.then(banterPosts => {
-  			this.setState({ banterPosts });
+  		.then(allPosts => {
+  			this.setState({ banterPosts: allPosts });
   			console.log('where is this', this.state);
   		})
   		.catch(err => console.log(err));
@@ -48,7 +56,6 @@ class BantersContainer extends Component {
 
 
 	render() {
-		console.log('parent state', this)
 		return(
 			<div className='bantersContainer'>
 			<form onSubmit={this.handleSubmit}>
