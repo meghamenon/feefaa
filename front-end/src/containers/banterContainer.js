@@ -17,7 +17,7 @@ class BantersContainer extends Component {
 			content: event.target.value
 		})
 
-	}  
+	}
 
 	handleSubmit = (event) => {
 		event.preventDefault()
@@ -42,6 +42,21 @@ class BantersContainer extends Component {
 			})
 		})
 	}
+	deletePost = (banter_id) => {
+		let updatedPost = this.state.banterPosts.filter(banter => banter._id !== banter_id);
+		fetch(`http://localhost:8080/api/banters/${ banter_id }`, {
+			method: 'DELETE',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json',
+			}
+		})
+		.then(res => {
+			console.log(res);
+			this.setState({ banterPosts: updatedPost })
+		})
+		.catch(err => console.log(err));
+	}
 
 
 	componentDidMount() {
@@ -58,12 +73,16 @@ class BantersContainer extends Component {
 	render() {
 		return(
 			<div className='bantersContainer'>
-			<form onSubmit={this.handleSubmit}>
-				Banter<input type="text" value={this.state.content} onChange={this.handleContentChange}/>
-				<input type="submit" value="submit" />
-			</form>
-			<Banter banters={this.state.banterPosts} />
-			 </div>
+				<form onSubmit={this.handleSubmit}>
+					Banter<input type="text" value={this.state.content} onChange={this.handleContentChange}/>
+					<input type="submit" value="submit" />
+				</form>
+				<div className="tweet_card">
+					<Banter banters={this.state.banterPosts} />
+					<button className="btn btn-sm btn-danger" onClick={() => this.deletePost(this.banter._id)}>Delete</button>
+				</div>
+		 </div>
+
 		)
 	}
 }
