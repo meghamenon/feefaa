@@ -43,6 +43,7 @@ class BantersContainer extends Component {
 		})
 	}
 	deletePost = (banter_id) => {
+		console.log(banter_id);
 		let updatedPost = this.state.banterPosts.filter(banter => banter._id !== banter_id);
 		fetch(`http://localhost:8080/api/banters/${ banter_id }`, {
 			method: 'DELETE',
@@ -78,8 +79,7 @@ class BantersContainer extends Component {
 					<input type="submit" value="submit" />
 				</form>
 				<div className="tweet_card">
-					<Banter banters={this.state.banterPosts} />
-					<button className="btn btn-sm btn-danger" onClick={() => this.deletePost(this.banter._id)}>Delete</button>
+					<Banter banters={this.state.banterPosts} deletePost={this.deletePost} />
 				</div>
 		 </div>
 
