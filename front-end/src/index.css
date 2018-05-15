@@ -22,7 +22,7 @@ a {
   padding: 0;
 }
 .tweet-card {
-  background-color: #fff;
+  background-color: white;
   border-bottom: 1px solid #e6ecf0;
   min-height: 52px;
   padding: 9px 12px;
@@ -68,7 +68,7 @@ a {
 }
 
 .fullname{
-  color: black
+  color: black;
 }
 
 .tweet-time{
@@ -77,4 +77,8 @@ a {
 
 .col{
   color: black
+}
+
+.form{
+  color: black;
 }

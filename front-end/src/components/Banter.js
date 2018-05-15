@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../index.css';
+import { Link } from 'react-router-dom';
 
 
 class Banter extends Component{
@@ -14,7 +15,7 @@ class Banter extends Component{
                 <div className="tweet-header">
                 <li className="tweet-card">
                 <span className="fullname">
-                <strong>{item.author} </strong>
+                <Link to={`/banters/${item._id}`}><strong>{item.author} </strong></Link>
                 <span className="username"> : {item.content}</span>
                 <a className="tweet-footer-btn">
                   <i className="octicon octicon-comment" aria-hidden="true"></i><span>{item.bump}</span>

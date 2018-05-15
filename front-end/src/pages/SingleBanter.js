@@ -100,23 +100,33 @@ class SingleBanterPage extends Component {
 		let allTheBashes; 
 		if (bashes) {
 			allTheBashes = bashes.map(bash => {
-			return <div key={bash._id}>{bash.author} says {bash.content}<button onClick={() => this.deletePost(bash._id)}>Delete</button></div>
+			return <div key={bash._id}>
+			<span className="fullname">
+			<strong>{bash.author} </strong> says
+			</span>
+			<span className="username"> :
+			{bash.content}
+			</span>
+			<button onClick={() => this.deletePost(bash._id)}>Delete</button></div>
 		})
 		} else {
 			allTheBashes = <h1>Loading...</h1>
 		}
 
 		return(
-			<div>
-			{banter.author}
-			{banter.content}
+			<div className="tweet-header">
+			<div className="tweet-card">
+			<span className="fullname">
+			<strong>{banter.author}</strong>
+			</span>
+			<span className="username"> : {banter.content}</span>
 			{allTheBashes} 
-			<form onSubmit={this.handleSubmit}>
+			<form className="form" onSubmit={this.handleSubmit}>
 				Bash<input type="text" value={this.state.content} onChange={this.handleContentChange} />
 				<input type="submit" value="submit" />
 			</form>
 			</div>
-
+			</div>
 		)
 
 	}

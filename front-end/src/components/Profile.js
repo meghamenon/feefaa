@@ -10,7 +10,7 @@ class Profile extends Component{
             Profile
              <div className="card">
             <div className="card-body">
-            Hi I'm Jon Vadillo
+            Hi, I'm Luiz Suarez
             </div>
           </div>
           </div>
@@ -19,7 +19,7 @@ class Profile extends Component{
              Trends for you
              <div className="card">
             <div className="card-body">
-             #brooklyn99
+             #FifaWorldCup2018
             </div>
           </div>
           </div>

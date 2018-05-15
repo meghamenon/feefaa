@@ -9,7 +9,7 @@ class Follow extends Component{
             Who to Follow
              <div className="card">
             <div className="card-body">
-           Steve Jobs
+           Jürgen Klopp
             </div>
           </div>
           </div>

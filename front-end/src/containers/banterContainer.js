@@ -78,7 +78,7 @@ class BantersContainer extends Component {
 					Banter<input type="text" value={this.state.content} onChange={this.handleContentChange}/>
 					<input type="submit" value="submit" />
 				</form>
-				<div className="tweet_card">
+				<div className="tweet-card">
 					<Banter banters={this.state.banterPosts} deletePost={this.deletePost}/>
 				</div>
 		 </div>
