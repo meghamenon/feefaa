@@ -1,12 +1,36 @@
 var models = require('../models');
 
-var bashesData = [{
+var bashesData = [
+{
   author: "Barcamonkey",
   avatar: "https://www.pinterest.com/Trekmonkey/trek-monkey-logos/",
   content: "Real Madrid can go f off",
   bump: 13,
   media: "https://www.memecenter.com/search/real%20madrid"
-}];
+},
+{
+  author: "Messi is God",
+  avatar: "https://www.pinterest.com/Trekmonkey/trek-monkey-logos/",
+  content: "Barcaaa",
+  bump: 13,
+  media: "https://www.memecenter.com/search/real%20madrid"
+},
+{
+  author: "Van Persie",
+  avatar: "https://www.pinterest.com/Trekmonkey/trek-monkey-logos/",
+  content: "Manchester United Forever!!",
+  bump: 13,
+  media: "https://www.memecenter.com/search/real%20madrid"
+},
+{
+  author: "Giroud",
+  avatar: "https://www.pinterest.com/Trekmonkey/trek-monkey-logos/",
+  content: "nananananana",
+  bump: 13,
+  media: "https://www.memecenter.com/search/real%20madrid"
+},
+
+];
 
 models.Bash.remove({}, function(err, res){
   if(err){
@@ -39,7 +63,23 @@ models.Bash.remove({}, function(err, res){
             bump: 200,
             media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
             bash: [bash[0]]
-          }
+          },
+          {
+            author: "Lionel",
+            avatar: "https://imgflip.com/memegenerator/71006498/Sad-Ronaldo",
+            content: "Argentinaaaaaaaa",
+            bump: 200,
+            media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
+            bash: [bash[1]]
+          },
+          {
+            author: "Arsene Wenger",
+            avatar: "https://imgflip.com/memegenerator/71006498/Sad-Ronaldo",
+            content: "Gimme Arsenal back bi#$%##",
+            bump: 200,
+            media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
+            bash: [bash[2]]
+          },
         ], function(err, banters){
           if(err){
             console.log('Error', err);

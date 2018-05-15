@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/Header';
-import Profile from './components/Profile';
-import Banter from './components/Banter';
-import Follow from './components/Follow';
-import BantersContainer from './containers/banterContainer';
+import Homepage from './pages/Homepage';
+import SingleBanter from './pages/SingleBanter';
+import { Switch, Route, Link } from 'react-router-dom';
 
 
 class App extends Component {
   render() {
 
     return (
-   <div className="App">
-      	<Header />
-  
-    <div className="container">
-      <div className="row">
-        	<Profile />
+    	<div>
+      <Switch>
+        <Route path='/' exact component={ Homepage }/>
+        <Route path='/banters/:banter_id' component={ SingleBanter }/>
 
-
-    <div className="col-6">
-      <ol className="tweet-list">
-        	<BantersContainer />
-      </ol>
-     </div>
-
-     <div className="col">
-        <div className="row">
-        	<Follow />
-  		</div>
-    </div>
-
+      </Switch>
       </div>
-    </div>
- </div>
     );
   }
 }

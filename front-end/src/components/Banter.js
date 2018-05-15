@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../index.css';
 
+
 class Banter extends Component{
 
 
@@ -11,6 +12,7 @@ class Banter extends Component{
 			let id = item._id
           return <div key={item._id}>
                 <div className="tweet-header">
+                <li className="tweet-card">
                 <span className="fullname">
                 <strong>{item.author} </strong>
                 <span className="username"> : {item.content}</span>
@@ -19,6 +21,7 @@ class Banter extends Component{
                 </a>
                 </span>
 								<button className="btn btn-sm btn-danger" onClick={() => this.props.deletePost(item._id)}>Delete</button>
+                </li>
                 </div>
                  </div>
 		}) : <h1> Loading </h1>

@@ -79,7 +79,7 @@ class BantersContainer extends Component {
 					<input type="submit" value="submit" />
 				</form>
 				<div className="tweet_card">
-					<Banter banters={this.state.banterPosts} deletePost={this.deletePost} />
+					<Banter banters={this.state.banterPosts} deletePost={this.deletePost}/>
 				</div>
 		 </div>
 
