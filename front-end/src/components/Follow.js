@@ -10,15 +10,16 @@ class Follow extends Component{
              <div className="card">
             <div className="card-body">
            Jürgen Klopp
+           <img className="who-to-follow" src="https://platform-static-files.s3.amazonaws.com/premierleague/photos/players/250x250/man279.png" />
             </div>
           </div>
           </div>
 
           <div className="row">
-             Something
+             Losers weepers
              <div className="card">
             <div className="card-body">
-             blah blah 
+             <img className="weepers" src="https://img.huffingtonpost.com/asset/57b96aab1800002100bcc141.jpeg?ops=scalefit_720_noupscale" />
             </div>
           </div>
           </div>

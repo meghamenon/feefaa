@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Banter from '../components/Banter';
 import '../index.css';
-// import Bash from '../components/Bash'
+import Profile from '../components/Profile';
+import Follow from '../components/Follow';
+import Header from '../components/Header';
+import faker from 'faker';
 
 class SingleBanterPage extends Component {
 
@@ -19,7 +22,8 @@ class SingleBanterPage extends Component {
 		event.preventDefault()
 
 		let banterId = this.props.match.params.banter_id
-
+		var randomName = faker.fake("{{name.firstName}} {{hacker.verb}}");
+		
 		console.log('props', this.props)
 		console.log('submitted')
 		console.log('banterId', banterId)
@@ -31,7 +35,7 @@ class SingleBanterPage extends Component {
 			},
 			body: JSON.stringify({
 				content: this.state.content,
-				author: 'basher'
+				author: randomName,
 			})
 		})
 		.then(res => res.json())
@@ -90,6 +94,7 @@ class SingleBanterPage extends Component {
   		.catch(err => console.log(err));
 	  }
 
+
 	render() {
 		console.log('The STATE = ', this.state.banterPost);
 		let banter = this.state.banterPost;
@@ -101,33 +106,51 @@ class SingleBanterPage extends Component {
 		if (bashes) {
 			allTheBashes = bashes.map(bash => {
 			return <div key={bash._id}>
-			<span className="fullname">
+			<span className="fullname bash-author">
 			<strong>{bash.author} </strong> says
 			</span>
-			<span className="username"> :
+			<span className="username bash-content"> :
 			{bash.content}
 			</span>
-			<button onClick={() => this.deletePost(bash._id)}>Delete</button></div>
+			<button className="btn btn-outline-danger btn-sm ml-2"onClick={() => this.deletePost(bash._id)}>X</button></div>
 		})
 		} else {
 			allTheBashes = <h1>Loading...</h1>
 		}
 
 		return(
-			<div className="tweet-header">
-			<div className="tweet-card">
-			<span className="fullname">
-			<strong>{banter.author}</strong>
-			</span>
-			<span className="username"> : {banter.content}</span>
-			{allTheBashes} 
+	    <div className="App">
+	      	<Header />
+	  
+	    <div className="container">
+	      <div className="row">
+	        	<Profile />
+
+	      <div className="tweet-header col-6">
+				<div className="tweet-card">
+					<span className="fullname banter-author">
+						<strong>{banter.author}</strong>
+					</span>
+				<span className="username banter-content"> : {banter.content}</span>
+					{allTheBashes} <br/>
 			<form className="form" onSubmit={this.handleSubmit}>
-				Bash<input type="text" value={this.state.content} onChange={this.handleContentChange} />
-				<input type="submit" value="submit" />
+				<input type="text" value={this.state.content} onChange={this.handleContentChange} />
+				<input className="btn btn-outline-success btn-sm ml-2" type="submit" value="Bash it!" />
 			</form>
 			</div>
 			</div>
+
+	     <div className="col">
+	        <div className="row">
+	        	<Follow />
+	  		</div>
+	    </div>
+
+	      </div>
+	    </div>
+		</div>
 		)
+
 
 	}
 

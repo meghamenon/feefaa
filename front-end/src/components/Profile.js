@@ -12,6 +12,7 @@ class Profile extends Component{
             <div className="card-body">
             Hi, I'm Luiz Suarez
             </div>
+            <img className="profile-pic" src="https://static.standard.co.uk/s3fs-public/thumbnails/image/2014/06/25/09/AN46695362xxc.jpg?w968h681" />
           </div>
           </div>
 

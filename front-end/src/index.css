@@ -82,3 +82,52 @@ a {
 .form{
   color: black;
 }
+
+.media{
+  height: 350px;
+  width: 350px;
+}
+.weepers{
+  height: 200px;
+  width: 200px;
+}
+
+.who-to-follow{
+  height: 200px;
+  width: 200px;
+}
+
+.profile-pic{
+  height: 200px;
+  width: 200px;
+}
+
+.bash-author{
+  font-size: 15px;
+}
+
+.bash-content{
+  font-size: 15px;
+}
+
+.banter-author{
+  font-size: 50px;
+}
+
+.banter-content{
+  font-size: 50px;
+}
+.banter-input {
+  padding: 7px;
+}
+.banter-submit {
+  padding: 5px;
+}
+.bash-avatar {
+/*  border-radius: 50%;*/  
+  height: 20px;
+  width: 20px;
+  /*float: left;*/
+  /*margin-top: 3px;*/
+  /*margin-left: -58px;*/
+}

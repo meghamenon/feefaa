@@ -59,17 +59,17 @@ models.Bash.remove({}, function(err, res){
           {
             author: "Ronaldo",
             avatar: "https://imgflip.com/memegenerator/71006498/Sad-Ronaldo",
-            content: "Ronaldo don't cry",
+            content: "Whoooooo",
             bump: 200,
-            media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
+            media: "https://cdn.newsapi.com.au/image/v1/5213e07733cdb9c836bda4ca70d73457",
             bash: [bash[0]]
           },
           {
             author: "Lionel",
             avatar: "https://imgflip.com/memegenerator/71006498/Sad-Ronaldo",
-            content: "Argentinaaaaaaaa",
+            content: "Whaaaa",
             bump: 200,
-            media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
+            media: "https://cdn.images.dailystar.co.uk/dynamic/58/photos/882000/620x/Lionel-Messi-654296.jpg",
             bash: [bash[1]]
           },
           {
@@ -77,7 +77,7 @@ models.Bash.remove({}, function(err, res){
             avatar: "https://imgflip.com/memegenerator/71006498/Sad-Ronaldo",
             content: "Gimme Arsenal back bi#$%##",
             bump: 200,
-            media: "https://tenor.com/view/cristiano-ronaldo-gif-6234372",
+            media: "https://metrouk2.files.wordpress.com/2018/05/sei_11986984-e1526244484378.jpg?w=748&h=523&crop=1",
             bash: [bash[2]]
           },
         ], function(err, banters){
