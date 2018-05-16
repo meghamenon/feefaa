@@ -13,22 +13,21 @@ class Banter extends Component{
 			let id = item._id
 
           return <div key={item._id}>
-                <div className="tweet-header">
-                <li className="tweet-card">
-                <span className="fullname">
-                <div className="container">
-                <img className= "bash-avatar media" src={item.media} /> 
+              <div className="tweet-header">
+                  <li className="tweet-card h-100">
+                  <span className="fullname">
+                  <div className="banter-container">
+                        <img className= "bash-avatar media float-left" src={item.avatar} /> 
+                        <div className="banter-author-container">
+                          <Link to={`/banters/${item._id}`}><strong>{item.author} </strong></Link>
+                          <span className="username"> : {item.content}</span>
+        								  <button className="btn btn-outline-danger btn-sm ml-2" onClick={() => this.props.deletePost(item._id)}>X</button>
+                        </div>
                 </div>
-                <Link to={`/banters/${item._id}`}><strong>{item.author} </strong></Link>
-                <span className="username"> : {item.content}</span>
-                <a className="tweet-footer-btn">
-                  <i className="octicon octicon-comment" aria-hidden="true"></i><span>{item.bump}</span>
-                </a>
                 </span>
-								<button className="btn btn-outline-danger btn-sm ml-2" onClick={() => this.props.deletePost(item._id)}>X</button>
                 </li>
                 </div>
-                 </div>
+              </div>
 		}) : <h1> Loading </h1>
 
 

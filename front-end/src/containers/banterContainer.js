@@ -9,7 +9,8 @@ class BantersContainer extends Component {
 	  	super();
 	  	this.state = {
 	  		banterPosts: null,
-	  		content: ''
+	  		content: '',
+	  		avatar: ''
 	  	}
 	  }
 
@@ -25,6 +26,7 @@ class BantersContainer extends Component {
 		event.preventDefault()
 		console.log("submitted")
 		var randomName = faker.fake("{{name.firstName}} {{hacker.verb}}");
+		var randomAvatar = faker.fake("{{image.avatar}}");
 		fetch('http://localhost:8080/api/banters', {
 			method: 'POST',
 			headers: {
@@ -33,7 +35,8 @@ class BantersContainer extends Component {
 			},
 			body: JSON.stringify({
 				content: this.state.content,
-				author: randomName
+				author: randomName,
+				avatar: randomAvatar
 			})
 		})
 		.then(res => res.json())
@@ -41,7 +44,7 @@ class BantersContainer extends Component {
 			this.setState({
 				banterPosts: this.state.banterPosts.concat(newPost),
 				// banterPosts: [...this.state.banterPosts, newPost]
-				content: ''
+				content: '',
 			})
 		})
 	}

@@ -10,12 +10,11 @@ class Header extends Component{
 		<h5 className="my-0 mr-md-auto font-weight-normal text-dark">
 		<a href="/"> FeeFaa </a></h5>
       	<nav className="my-2 my-md-0 mr-md-3">
-        	<a className="p-2 text-dark" href="#">Footy News</a>
-        	<a className="p-2 text-dark" href="#">What's New</a>
-        	<a className="p-2 text-dark" href="#">Haters Go Here</a>
-        	<a className="p-2 text-dark" href="#">Fans Go Here</a>
+        	<a className="p-2 text-dark" href="http://www.fifa.com/news/">Footy News</a>
+        	<a className="p-2 text-dark" href="http://www.goal.com/en-us">What's New</a>
+        	<a className="p-2 text-dark" href="https://www.wsj.com/articles/how-to-convert-a-soccer-hater-1404089558">Haters Go Here</a>
+        	<a className="p-2 text-dark" href="http://www.footytube.com/">Fans Go Here</a>
       	</nav>
-      		<a className="btn btn-outline-primary" href="#">Sign up to Banter</a>
 		</div>
 		)
 	}

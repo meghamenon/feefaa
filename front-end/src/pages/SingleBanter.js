@@ -10,7 +10,8 @@ class SingleBanterPage extends Component {
 
 	state = {
 		banterPost: {},
-		content: ''
+		content: '',
+		avatar: ''
 	}
 	handleContentChange = (event) => {
 		console.log('you typed', event.target.value)
@@ -23,6 +24,7 @@ class SingleBanterPage extends Component {
 
 		let banterId = this.props.match.params.banter_id
 		var randomName = faker.fake("{{name.firstName}} {{hacker.verb}}");
+		var randomAvatar = faker.fake("{{image.avatar}}");
 		
 		console.log('props', this.props)
 		console.log('submitted')
@@ -36,6 +38,7 @@ class SingleBanterPage extends Component {
 			body: JSON.stringify({
 				content: this.state.content,
 				author: randomName,
+				avatar: randomAvatar
 			})
 		})
 		.then(res => res.json())
@@ -46,7 +49,8 @@ class SingleBanterPage extends Component {
 
 			this.setState({
 				banterPost: newBash,
-				content: ''
+				content: '',
+				avatar: ''
 			})
 		})
 	}
@@ -73,7 +77,8 @@ class SingleBanterPage extends Component {
 					...this.state.banterPost,
 					bash: updatedBash,
 				},
-				content: ''
+				content: '',
+				avatar: ''
 			})
 		})
 		.catch(err => console.log(err));
@@ -106,13 +111,16 @@ class SingleBanterPage extends Component {
 		if (bashes) {
 			allTheBashes = bashes.map(bash => {
 			return <div key={bash._id}>
+			<div className="tweet-card banter-container">
+			<img className= "bash-avatar media float-left" src={bash.avatar} />
 			<span className="fullname bash-author">
 			<strong>{bash.author} </strong> says
 			</span>
-			<span className="username bash-content"> :
+			<span className="username bash-content"> : {' '}
 			{bash.content}
 			</span>
 			<button className="btn btn-outline-danger btn-sm ml-2"onClick={() => this.deletePost(bash._id)}>X</button></div>
+			</div>
 		})
 		} else {
 			allTheBashes = <h1>Loading...</h1>
@@ -127,17 +135,19 @@ class SingleBanterPage extends Component {
 	        	<Profile />
 
 	      <div className="tweet-header col-6">
-				<div className="tweet-card">
+				<div className="tweet-card banter-container">
+				<img className= "bash-avatar media float-left" src={banter.avatar} />
+				<div className="banter-author-container">
 					<span className="fullname banter-author">
 						<strong>{banter.author}</strong>
 					</span>
-				<span className="username banter-content"> : {banter.content}</span>
+				<span className="username banter-content"> : {banter.content}</span></div>
+				</div>
 					{allTheBashes} <br/>
 			<form className="form" onSubmit={this.handleSubmit}>
 				<input type="text" value={this.state.content} onChange={this.handleContentChange} />
-				<input className="btn btn-outline-success btn-sm ml-2" type="submit" value="Bash it!" />
+				<input className="btn btn-success btn-sm ml-2" type="submit" value="Bash it!" />
 			</form>
-			</div>
 			</div>
 
 	     <div className="col">

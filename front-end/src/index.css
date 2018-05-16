@@ -103,19 +103,20 @@ a {
 }
 
 .bash-author{
-  font-size: 15px;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
 .bash-content{
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .banter-author{
-  font-size: 50px;
+  font-size:20px;
 }
 
 .banter-content{
-  font-size: 50px;
+  font-size:20px;
 }
 .banter-input {
   padding: 7px;
@@ -127,7 +128,19 @@ a {
  border-radius: 50%;
   height: 75px;
   width: 75px;
-  /* float: left; */
   margin-top: 3px;
-  /* margin-left: -58px; */
+}
+
+.banter-container{
+  min-height: 100px;
+  text-align: left;
+}
+
+.banter-author-container{
+  padding: 15px;
+  margin-left: 70px;
+}
+
+.twitter-body-timeline{
+  max-width: 400px;
 }

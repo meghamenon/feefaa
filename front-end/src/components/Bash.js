@@ -11,9 +11,11 @@ class Bash extends Component{
     	let bashPosts = this.props.bash ? this.props.bash.map((item) => {
 			let id = item._id
       var randomName = faker.name.findName();
+      var randomAvatar = faker.fake("{{image.avatar}}");
         return <div key={item._id}>
                 <div className="tweet-header">
                 <li className="tweet-card">
+                <img className= "bash-avatar media float-left" src={randomAvatar} />
                 <span className="fullname">
                 <strong>{randomName} </strong>
                 <span className="username"> : {item.content}</span>
