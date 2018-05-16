@@ -65,6 +65,7 @@ a {
 
 .username{
   color: black;
+  font-size: 20px;
 }
 
 .fullname{
@@ -143,4 +144,8 @@ a {
 
 .twitter-body-timeline{
   max-width: 400px;
+}
+
+.banter-username{
+  font-size: 15px;
 }

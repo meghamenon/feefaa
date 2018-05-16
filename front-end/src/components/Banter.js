@@ -20,7 +20,7 @@ class Banter extends Component{
                         <img className= "bash-avatar media float-left" src={item.avatar} /> 
                         <div className="banter-author-container">
                           <Link to={`/banters/${item._id}`}><strong>{item.author} </strong></Link>
-                          <span className="username"> : {item.content}</span>
+                          <span className="banter-username"> : {item.content}</span>
         								  <button className="btn btn-outline-danger btn-sm ml-2" onClick={() => this.props.deletePost(item._id)}>X</button>
                         </div>
                 </div>
