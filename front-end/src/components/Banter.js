@@ -11,13 +11,13 @@ class Banter extends Component{
 
     let banterPosts = this.props.banters ? this.props.banters.map((item) => {
 			let id = item._id
-      
+
           return <div key={item._id}>
                 <div className="tweet-header">
                 <li className="tweet-card">
                 <span className="fullname">
                 <div className="container">
-                <img className= "media" src={item.media} /> 
+                <img className= "bash-avatar media" src={item.media} /> 
                 </div>
                 <Link to={`/banters/${item._id}`}><strong>{item.author} </strong></Link>
                 <span className="username"> : {item.content}</span>

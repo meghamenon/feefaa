@@ -124,10 +124,10 @@ a {
   padding: 5px;
 }
 .bash-avatar {
-/*  border-radius: 50%;*/  
-  height: 20px;
-  width: 20px;
-  /*float: left;*/
-  /*margin-top: 3px;*/
-  /*margin-left: -58px;*/
+ border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  /* float: left; */
+  margin-top: 3px;
+  /* margin-left: -58px; */
 }
