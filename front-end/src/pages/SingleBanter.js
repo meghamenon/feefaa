@@ -25,7 +25,7 @@ class SingleBanterPage extends Component {
 		let banterId = this.props.match.params.banter_id
 		var randomName = faker.fake("{{name.firstName}} {{hacker.verb}}");
 		var randomAvatar = faker.fake("{{image.avatar}}");
-		
+
 		console.log('props', this.props)
 		console.log('submitted')
 		console.log('banterId', banterId)
@@ -59,7 +59,7 @@ class SingleBanterPage extends Component {
 		// event.preventDefault();
 		let banterId = this.props.match.params.banter_id
 		// console.log('The banter id is ' , banterId)
-		
+
 		let updatedBash = this.state.banterPost.bash.filter(bash => bash._id !== bashes_id);
 		console.log(updatedBash);
 		fetch(`http://localhost:8080/api/banters/${banterId}/bashes/${bashes_id}`, {
@@ -92,7 +92,7 @@ class SingleBanterPage extends Component {
 		fetch(`http://localhost:8080/api/banters/${banterId}/`)
   		.then(res => res.json())
   		.then(banterPost => {
-  			this.setState({ 
+  			this.setState({
   				banterPost: banterPost
   			});
   		})
@@ -107,19 +107,21 @@ class SingleBanterPage extends Component {
 		// let allTheBashes = bashes ? bashes.map(bash => {
 			// return <div>{bash.author} says {bash.content}</div>
 		// }) : <h1>Loading...</h1>
-		let allTheBashes; 
+		let allTheBashes;
 		if (bashes) {
 			allTheBashes = bashes.map(bash => {
 			return <div key={bash._id}>
 			<div className="tweet-card banter-container">
 			<img className= "bash-avatar media float-left" src={bash.avatar} />
-			<span className="fullname bash-author">
-			<strong>{bash.author} </strong> says
-			</span>
-			<span className="username bash-content"> : {' '}
-			{bash.content}
-			</span>
-			<button className="btn btn-outline-danger btn-sm ml-2"onClick={() => this.deletePost(bash._id)}>X</button></div>
+				<div className= "banter-author-container">
+					<span className="fullname bash-author">
+						<strong>{bash.author} </strong> says
+					</span>
+					<span className="username bash-content"> : {' '}
+						{bash.content}
+					</span>
+					<button className="btn btn-outline-danger btn-sm ml-2"onClick={() => this.deletePost(bash._id)}>X</button></div>
+				</div>
 			</div>
 		})
 		} else {
@@ -129,14 +131,14 @@ class SingleBanterPage extends Component {
 		return(
 	    <div className="App">
 	      	<Header />
-	  
+
 	    <div className="container">
 	      <div className="row">
 	        	<Profile />
 
 	      <div className="tweet-header col-6">
 				<div className="tweet-card banter-container">
-				<img className= "bash-avatar media float-left" src={banter.avatar} />
+				<img className= "banter-avatar media float-left" src={banter.avatar} />
 				<div className="banter-author-container">
 					<span className="fullname banter-author">
 						<strong>{banter.author}</strong>
